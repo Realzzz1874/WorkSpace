@@ -66,3 +66,32 @@ function validateForm(){
 > 函数作为方法调用、
 > 函数作为方法调用、
 > 作为函数方法调用函数
+
+##### 15.闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。
+
+##### 16.事件冒泡与事件捕获
+* 事件捕获阶段：事件从最上一级标签开始往下查找，直到捕获到事件目标(target)。
+* 事件冒泡阶段：事件从事件目标(target)开始，往上冒泡直到页面的最上一级标签。
+* true=捕获  false=冒泡
+```javascript
+ele.addEventListener('click',functionDoSomethig,true)
+```
+##### 17. EventListener 传递参数
+当传递参数值时，使用"匿名函数"调用带参数的函数：
+```javascript
+element.addEventListener("click", function(){ myFunction(p1, p2); });
+```
+##### 18.数组创建新方法
+```javascript
+Array.prototype.myUcase=function(){
+	for (i=0;i<this.length;i++){
+		this[i]=this[i].toUpperCase();
+	}
+}
+function myFunction(){
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.myUcase();
+	var x=document.getElementById("demo");
+	x.innerHTML=fruits;
+}
+```
